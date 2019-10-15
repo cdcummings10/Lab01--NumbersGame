@@ -40,6 +40,7 @@ Navigate to folder ```Lab01--NumbersGame``` directory.
 Navigate through these folders: ```NumberGame``` => ```NumberGame``` => ```bin``` => ```Debug```
 
 Run ```NumberGame.exe```
+
 ---
 
 ### Visuals
@@ -57,4 +58,4 @@ Run ```NumberGame.exe```
 
 ### Change Log 
 
-1.1=0: *Finished Numbers Game. Added all functionality to app.* - 15 Oct 2019
+1.0: *Finished Numbers Game. Added all functionality to app.* - 15 Oct 2019
