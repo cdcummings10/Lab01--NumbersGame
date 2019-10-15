@@ -27,6 +27,8 @@ namespace NumberGame
 
         static void StartSequence()
         {
+            try
+            {
             Console.WriteLine("Enter a number greater than 0.");
             int userInput = Convert.ToInt32(Console.ReadLine());
             int[] userArr = new int[userInput];
@@ -34,6 +36,20 @@ namespace NumberGame
             int sum = GetSum(fullArr);
             int product = GetProduct(fullArr, sum);
             decimal quotient = GetQuotient(product);
+            }
+            catch (FormatException e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         static int[] Populate(int[] arr)
@@ -54,6 +70,10 @@ namespace NumberGame
             for (int i = 0; i < arr.Length; i++)
             {
                 sum += arr[i];
+            }
+            if (sum < 20)
+            {
+                throw (new Exception($"Value of {sum} is too low."));
             }
             Console.WriteLine($"The sum of your array = {sum}.");
             return sum;
