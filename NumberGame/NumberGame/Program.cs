@@ -12,6 +12,7 @@ namespace NumberGame
         {
             try
             {
+                Console.WriteLine("Welcome to this Math Numbers Game!");
                 StartSequence();
             }
             catch (Exception e)
@@ -29,13 +30,21 @@ namespace NumberGame
         {
             try
             {
-            Console.WriteLine("Enter a number greater than 0.");
-            int userInput = Convert.ToInt32(Console.ReadLine());
-            int[] userArr = new int[userInput];
-            int[] fullArr = Populate(userArr);
-            int sum = GetSum(fullArr);
-            int product = GetProduct(fullArr, sum);
-            decimal quotient = GetQuotient(product);
+                Console.WriteLine("Enter a number greater than 0.");
+                int userInput = Convert.ToInt32(Console.ReadLine());
+                int[] userArr = new int[userInput];
+                int[] fullArr = Populate(userArr);
+                int sum = GetSum(fullArr);
+                int product = GetProduct(fullArr, sum);
+                decimal quotient = GetQuotient(product);
+
+                Console.WriteLine($"Your array size = {fullArr.Length}.");
+                Console.WriteLine($"Numbers in your array: {String.Join(", ", fullArr)}");
+                Console.WriteLine($"The sum of your array = {sum}.");
+                int multiplyInput = product / sum;
+                Console.WriteLine($"The product of {multiplyInput} * {sum} = {product}.");
+                decimal divideInput = product / quotient;
+                Console.WriteLine($"The quotient of {product} / {divideInput} = {quotient}.");
             }
             catch (FormatException e)
             {
@@ -60,7 +69,6 @@ namespace NumberGame
                 arr[i] = Convert.ToInt32(Console.ReadLine());
 
             }
-            Console.WriteLine($"Your array size = {arr.Length}.");
             return arr;
         }
 
@@ -75,7 +83,6 @@ namespace NumberGame
             {
                 throw (new Exception($"Value of {sum} is too low."));
             }
-            Console.WriteLine($"The sum of your array = {sum}.");
             return sum;
         }
 
@@ -86,7 +93,7 @@ namespace NumberGame
                 Console.WriteLine($"Please enter a number between 1 and {arr.Length}");
                 int userInput = Convert.ToInt32(Console.ReadLine());
                 int product = arr[userInput - 1] * sum;
-                Console.WriteLine($"The product of {arr[userInput - 1]} * {sum} = {product}.");
+
                 return product;
             }
             catch (Exception)
@@ -102,7 +109,6 @@ namespace NumberGame
                 Console.WriteLine($"Please enter a number to divide {product} by:");
                 int userInput = Convert.ToInt32(Console.ReadLine());
                 decimal quotient = Decimal.Divide(product, userInput);
-                Console.WriteLine($"The quotient of {product} * {userInput} = {quotient}.");
                 return quotient;
             }
             catch (Exception e)
