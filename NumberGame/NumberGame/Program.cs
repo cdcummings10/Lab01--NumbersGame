@@ -25,7 +25,10 @@ namespace NumberGame
                 Console.ReadLine();
             }
         }
-
+        /// <summary>
+        /// Runs the main Numbers Game program. Runs all the calculation functions and writes to
+        /// console the results of the calculations.
+        /// </summary>
         static void StartSequence()
         {
             try
@@ -41,8 +44,10 @@ namespace NumberGame
                 Console.WriteLine($"Your array size = {fullArr.Length}.");
                 Console.WriteLine($"Numbers in your array: {String.Join(", ", fullArr)}");
                 Console.WriteLine($"The sum of your array = {sum}.");
+                //Backwards calculates input for product
                 int multiplyInput = product / sum;
                 Console.WriteLine($"The product of {multiplyInput} * {sum} = {product}.");
+                //Backwards calculates input for quotient
                 decimal divideInput = product / quotient;
                 Console.WriteLine($"The quotient of {product} / {divideInput} = {quotient}.");
             }
@@ -60,7 +65,11 @@ namespace NumberGame
                 throw;
             }
         }
-
+        /// <summary>
+        /// Takes in an integer array and updates array with values inputted by the user.
+        /// </summary>
+        /// <param name="arr">Takes in an integer array</param>
+        /// <returns>Returns a populated integer array.</returns>
         static int[] Populate(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -71,7 +80,11 @@ namespace NumberGame
             }
             return arr;
         }
-
+        /// <summary>
+        /// Takes an integer array and calculates the sum of the the array. Throw an exception if the sum is less than 20.
+        /// </summary>
+        /// <param name="arr">Takes an integer array.</param>
+        /// <returns>Returns an integer sum of the values of the array.</returns>
         static int GetSum(int[] arr)
         {
             int sum = 0;
@@ -85,7 +98,13 @@ namespace NumberGame
             }
             return sum;
         }
-
+        /// <summary>
+        /// Takes in an integer array and an integer. Takes user input to choose specific index of array.
+        /// Returns user targeted index value * the integer parameter.
+        /// </summary>
+        /// <param name="arr">Takes in an integer array.</param>
+        /// <param name="sum">Takes in an integer (Preferably the sum of the array)</param>
+        /// <returns>Returns the product as an integer.</returns>
         static int GetProduct(int[] arr, int sum)
         {
             try
@@ -101,7 +120,12 @@ namespace NumberGame
                 throw;
             }
         }
-
+        /// <summary>
+        /// Takes in an integer and prompts the user for an integer. Divides the argument integer
+        /// by the user prompted integer. Returns the quotient.
+        /// </summary>
+        /// <param name="product">Takes in an integer (preferably the product from GetProduct())</param>
+        /// <returns>Returns a decimal.</returns>
         static decimal GetQuotient(int product)
         {
             try
