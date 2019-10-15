@@ -56,6 +56,10 @@ Run ```NumberGame.exe```
 
 ---
 
+### Time Estimates
+Estimated time to finish: 4 Hours
+Actual time to finish: 3 Hours
+
 ### Change Log 
 
 1.0: *Finished Numbers Game. Added all functionality to app.* - 15 Oct 2019
