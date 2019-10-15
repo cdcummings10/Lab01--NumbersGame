@@ -40,6 +40,7 @@ Navigate to folder ```Lab01--NumbersGame``` directory.
 Navigate through these folders: ```NumberGame``` => ```NumberGame``` => ```bin``` => ```Debug```
 
 Run ```NumberGame.exe```
+
 ---
 
 ### Visuals
