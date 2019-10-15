@@ -32,6 +32,8 @@ namespace NumberGame
             int[] fullArr = Populate(userArr);
             int sum = GetSum(fullArr);
             int product = GetProduct(fullArr, sum);
+            decimal quotient = GetQuotient(product);
+            Console.WriteLine($"Sum: {sum}, Product: {product}, Quotient: {quotient}");
             Console.ReadLine();
         }
 
@@ -60,10 +62,10 @@ namespace NumberGame
         {
             try
             {
-            Console.WriteLine($"Please enter a number between 1 and {arr.Length}");
-            int userInput = Convert.ToInt32(Console.ReadLine());
-            int product = arr[userInput] * sum;
-            return product;
+                Console.WriteLine($"Please enter a number between 1 and {arr.Length}");
+                int userInput = Convert.ToInt32(Console.ReadLine());
+                int product = arr[userInput] * sum;
+                return product;
             }
             catch (Exception e)
             {
@@ -71,6 +73,12 @@ namespace NumberGame
             }
         }
 
-        static void GetQuotient() { }
+        static decimal GetQuotient(int product)
+        {
+            Console.WriteLine($"Please enter a number to divide {product} by:");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+            decimal quotient = Decimal.Divide(product, userInput);
+            return quotient;
+        }
     }
 }
