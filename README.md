@@ -58,6 +58,7 @@ Run ```NumberGame.exe```
 
 ### Time Estimates
 Estimated time to finish: 4 Hours
+
 Actual time to finish: 3 Hours
 
 ### Change Log 
