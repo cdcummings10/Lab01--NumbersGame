@@ -21,6 +21,7 @@ namespace NumberGame
             finally
             {
                 Console.WriteLine("Program has finished running");
+                Console.ReadLine();
             }
         }
 
@@ -33,8 +34,6 @@ namespace NumberGame
             int sum = GetSum(fullArr);
             int product = GetProduct(fullArr, sum);
             decimal quotient = GetQuotient(product);
-            Console.WriteLine($"Sum: {sum}, Product: {product}, Quotient: {quotient}");
-            Console.ReadLine();
         }
 
         static int[] Populate(int[] arr)
@@ -45,6 +44,7 @@ namespace NumberGame
                 arr[i] = Convert.ToInt32(Console.ReadLine());
 
             }
+            Console.WriteLine($"Your array size = {arr.Length}.");
             return arr;
         }
 
@@ -55,6 +55,7 @@ namespace NumberGame
             {
                 sum += arr[i];
             }
+            Console.WriteLine($"The sum of your array = {sum}.");
             return sum;
         }
 
@@ -64,21 +65,31 @@ namespace NumberGame
             {
                 Console.WriteLine($"Please enter a number between 1 and {arr.Length}");
                 int userInput = Convert.ToInt32(Console.ReadLine());
-                int product = arr[userInput] * sum;
+                int product = arr[userInput - 1] * sum;
+                Console.WriteLine($"The product of {arr[userInput - 1]} * {sum} = {product}.");
                 return product;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
         }
 
         static decimal GetQuotient(int product)
         {
-            Console.WriteLine($"Please enter a number to divide {product} by:");
-            int userInput = Convert.ToInt32(Console.ReadLine());
-            decimal quotient = Decimal.Divide(product, userInput);
-            return quotient;
+            try
+            {
+                Console.WriteLine($"Please enter a number to divide {product} by:");
+                int userInput = Convert.ToInt32(Console.ReadLine());
+                decimal quotient = Decimal.Divide(product, userInput);
+                Console.WriteLine($"The quotient of {product} * {userInput} = {quotient}.");
+                return quotient;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return 0;
+            }
         }
     }
 }
