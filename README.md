@@ -1,5 +1,3 @@
-# Console Application README Example
-
 ## Number Game
 
 Lab01-Exception-Handling
